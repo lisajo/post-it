@@ -1,4 +1,5 @@
-
+<p class='pull-right'>
+	[<%= link_to 'edit this post', edit_post_path(@post) %>]
 </p>
 <% @post.categories.each do |category| %>
 <%= render @post.categories %>
@@ -9,8 +10,5 @@
 
 <%= @post.description %>
 <br />
-<% @comments.each do |comment| %>
-<%= puts comment %>
-<% end %>
-</p>
+
 <hr/>
