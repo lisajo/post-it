@@ -1,12 +1,16 @@
-<p>
-		<% @post.categories.each do |category| %>
-		<span class="badge"><%= category.name %></span>
-		<% end %>
 
-<p class='lead'>
-<%= @post.title %>
-
-<hr/>
 </p>
+<% @post.categories.each do |category| %>
+<%= render @post.categories %>
+<% end %>
+</p>
+
+<%= render 'shared/content_title', title: @post.title %>
+
 <%= @post.description %>
+<br />
+<% @comments.each do |comment| %>
+<%= puts comment %>
+<% end %>
 </p>
+<hr/>
