@@ -1,20 +1,29 @@
-<ul class="nav">
+<ul class="nav" role="navigation">
   <li>
     <%= link_to "Postit!", root_path, :class => 'brand' %>
   </li>  
   <li>
-  		<%= link_to 'link', '' %>
+  		   <%= link_to 'New Post', new_post_path %>
   </li>
+	<li class="dropdown">
+		<%= link_to "#", class: "dropdown-toggle", 'data-toggle' => 'dropdown' do %>
+          Categories <span class="caret"></span></a>
+          <% end %>
+          <ul class="dropdown-menu" role="menu">
+          	<% Category.all.each do |category| %>
+          	<li>
+          		<%= link_to category.name, category_path(category) %>
+          	</li>
+          	<% end %>
+            <li class="divider"></li>
+            <li><%= link_to(new_category_path) do %>
+            	<i class="icon-plus"></i>
+            	New Category</li>
+            	<% end %>
+            	
+          </ul>
+        </li>
+
 </ul>
-<div class= 'btn-group nav item'>
-	<%= link_to '#', class: 'btn btn-small dropdown-toggle', 'data-toggle' => 'dropdown' do %>
-	Categories <span class='caret'></span>
-	<% end %>
-	<ul class='drowndown-menu'>
-		<li>item 1</li>
-		<li> item 2 </li>
-</div>
-    
-<div class= 'nav item'>
-    <%= link_to 'New Post', new_post_path, class: 'btn btn-success btn-small' %>
-</div>
+
+

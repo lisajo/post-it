@@ -1,13 +1,5 @@
 <%= render 'shared/content_title', title: 'New Category' %>
-<% if @category.errors.any? %>
-  <div class='row'>
-    <div class='alert alert-error span8'>
-      <h5> Please fix the following errors: </h5>
-      <ul>
-        <% @category.errors.full_messages.each do |msg| %>
-          <li> <%= msg %>
-        <% end %>
-        <% end %>
+<%= render 'shared/errors', obj: @category %>
 <div class='well'>
 	<%= form_for @category do |f| %>
 	<div class='control-group'>
@@ -16,4 +8,5 @@
 		<%= f.submit "Create Category", class: 'btn btn-success' %>
 
 	<% end %>
-	<div>
+</div>
+</div>
