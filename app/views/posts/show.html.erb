@@ -28,6 +28,6 @@
 	<em><%= comment.body %></em>
 	<br />
 	<span class= 'quiet'>posted by</span> <%= comment.user.username %> 
-	<small> at <%= comment.user.created_at %> </small>
+	<small> at <%= display_datetime(comment.created_at) %> </small>
 </div>
 <% end %>
